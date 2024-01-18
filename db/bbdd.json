@@ -1,0 +1,8 @@
+{
+    "usuarios": [
+      
+        { "id": 1, "login": "pedro.pereda1", "nivel": "profesor", "password": "1234" },
+        { "id": 2, "login": "jefe.estudios", "nivel": "jefeEstudios", "password": "1234" },
+        { "id": 2, "login": "jefe2.estudios", "nivel": "jefeEstudios", "password": "1234" }
+    ]    
+}

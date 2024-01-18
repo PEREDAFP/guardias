@@ -1,0 +1,166 @@
+@import './base.css';
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  font-size: larger;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  flex-direction: row;
+}
+
+#logo {
+  display: flex;
+  align-items: center;
+}
+
+#logo svg {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  fill: #fff;
+}
+
+#login-button,
+#logout-button {
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+#login-button {
+  background-color: #4caf50;
+  margin-right: 10px;
+  /*display: none;*/
+}
+
+#logout-button {
+  background-color: #af4c53;
+}
+
+#login-button:hover,
+#logout-button:hover {
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+  background: #1286c9;
+}
+
+main {
+  padding: 20px;
+  text-align: center;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+a {
+  text-decoration: none;
+}
+
+/* Responsive */
+@media only screen and (max-width: 600px) {
+  header {
+    flex-direction: column;
+  }
+
+  #login-button,
+  #logout-button {
+    margin: 10px 0;
+  }
+
+  footer {
+    font-size: smaller;
+    text-align: left;
+  }
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.menu-ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  text-transform: capitalize;
+}
+
+.menu-ul li a:hover {
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+  background: #00090e;
+  color: aquamarine;
+  border-radius: 20px;
+}
+
+.menu-ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  /*Imprescindible para que se vea siempre el menú al volver al tamaño original */
+  transform: translateY(0);
+}
+
+.men-ul li {
+  margin-right: 15px;
+}
+
+.menu-icon {
+  /*cursor: pointer;*/
+  visibility: hidden;
+  font-size: xx-large;
+}
+.ratonInActivo {
+  cursor: move;
+  background-color: transparent;
+}
+
+/* Responsive */
+
+@media only screen and (max-width: 600px) {
+  .menu-ul {
+    display: none;
+  }
+
+  .menu-ul--peque {
+    flex-direction: column;
+    column-width: 3cap;
+    align-items: center;
+    transition: transform 0.3s;
+    display: flex;
+    border-color: black;
+    border-radius: 5px;
+    border-style: solid;
+    padding: 10px;
+  }
+
+  .menu-ul li {
+    margin-bottom: 1em;
+  }
+
+  nav {
+    margin-left: 0px;
+  }
+
+  .menu-icon {
+    visibility: visible;
+  }
+}
