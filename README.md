@@ -5,9 +5,7 @@ Proyecto de programa de gestión de guardias
 - Creado con VUE3 js
 - TypeScript..primer proyecto...
 - El componente botonera obtiene las rutas directamente del Router que le definamos.
-- Modificamos para hacer una prueba de git
-- Empezamos con una nueva rama llamada 
-- otra línea
+- Hemos modificado la rama botonera y queremos hacer un merge a main
 
 
 ## Recomiendo, si estás trabajando con VisualStudio Code
