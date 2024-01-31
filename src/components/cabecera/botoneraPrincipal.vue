@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { toRefs } from 'vue'
+//import { toRefs } from 'vue'
 //Textos obtenidos del .env
 const LOGIN: string = import.meta.env.VITE_LOGIN
 const LOGOUT: string = import.meta.env.VITE_LOGOUT
@@ -9,7 +9,7 @@ const MODIFICA_USUARIO: string  = import.meta.env.VITE_MODIFICA_USUARIO
 interface Props {
   conectado: boolean
 }
-const { conectado } = defineProps<Props>()
+const conectado = defineProps<Props>()
 </script>
 
 <template>
