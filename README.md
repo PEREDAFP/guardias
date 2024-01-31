@@ -6,6 +6,7 @@ Proyecto de programa de gestión de guardias
 - TypeScript..primer proyecto...
 - El componente botonera obtiene las rutas directamente del Router que le definamos.
 - Modificamos para hacer una prueba de git
+- Empezamos con una nueva rama llamada botonera
 
 
 ## Recomiendo, si estás trabajando con VisualStudio Code
