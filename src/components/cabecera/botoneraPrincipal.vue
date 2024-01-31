@@ -9,7 +9,7 @@ const MODIFICA_USUARIO: string  = import.meta.env.VITE_MODIFICA_USUARIO
 interface Props {
   conectado: boolean
 }
-const { conectado } = toRefs(defineProps<Props>())
+const { conectado } = defineProps<Props>()
 </script>
 
 <template>
