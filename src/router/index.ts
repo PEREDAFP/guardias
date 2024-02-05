@@ -90,7 +90,7 @@ router.beforeEach( (to, from, next ) => {
   //Debes trabajar con autentificación tipo oAuto2 + JWT 
   const usuario = useUsuarioStore()
   const { conectado } = storeToRefs(usuario)
-  if (!conectado.value)
+ 
   if (!conectado){
     if ((to.name === 'login') || (to.name === 'createlogin'))  next()
     next({ name: 'login' })
