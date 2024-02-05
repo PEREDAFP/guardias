@@ -88,6 +88,7 @@ const router = createRouter({
 router.beforeEach( (to, from, next ) => {
   //Recuerda que esto es un mal código para probar la limitación de acceso a nuestras rutas
   //Debes trabajar con autentificación tipo oAuto2 + JWT 
+  //Podrás trabajar con funciones async --> async (to, from, next) para llamar a una API que te devuelva si tienes autorización
   const usuario = useUsuarioStore()
   const { conectado } = storeToRefs(usuario)
  
