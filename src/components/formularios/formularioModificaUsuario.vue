@@ -53,7 +53,7 @@ const PASSWORD_DEBEN_SER_IGUALES = import.meta.env.VITE_PASSWORD_DEBEN_SER_IGUAL
       <button v-if="password === repassword" button class="login-button" type="submit">{{ BOTONGUARDAR }}</button>
       <h2 v-else>{{ PASSWORD_DEBEN_SER_IGUALES }}</h2>
     </form>
-    <h1>{{ usuario.nivel }}</h1>
+
   
   </div>
 </template>

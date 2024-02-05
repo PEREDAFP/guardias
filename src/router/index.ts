@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import inicioComponente from '@/components/inicioComponente.vue'
 import componenteUno from '@/components/paraProbar/componenteUno.vue'
 import componenteDos from '@/components/paraProbar/componenteDos.vue'
+import notFound from '@/components/notFound.vue'
 
 /* con el componente tres haremos un lazy loaded
 import componenteTres from '@/components/paraProbar/componenteTres.vue'
@@ -74,25 +75,28 @@ const router = createRouter({
       name: 'modificaUser',
       component: () => import('@/components/formularios/formularioModificaUsuario.vue')
     },
-
     {
       path: '/:pathMatch(.*)*',
-      redirect: () => ({ name: 'inicio' })
-    }
+      component: inicioComponente,
+      
+    } 
+    
   ]
 })
 
-//OJO si se quiere trabajar con pinia y router hay que hacerlo así
 
-router.beforeEach((to, from, next) => {
-  //En esta tabla añadimos las rutas que pueden accederse sin estar conectados
-  const rutasSinLogin:string[] = ['login', 'createlogin', 'inicio']
+router.beforeEach( (to, from, next ) => {
+  //Recuerda que esto es un mal código para probar la limitación de acceso a nuestras rutas
+  //Debes trabajar con autentificación tipo oAuto2 + JWT 
   const usuario = useUsuarioStore()
   const { conectado } = storeToRefs(usuario)
-  if (!conectado.value) {
-    //if (to.name == 'login' || to.name == 'createlogin' || to.name === 'inicio') next()
-    if (rutasSinLogin.includes(to.name as string)) next()
-  } else next() //Implementaremos los filtros a rutas de Jefatura de Estudios
+  if (!conectado.value)
+  if (!conectado){
+    if ((to.name === 'login') || (to.name === 'createlogin'))  next()
+    next({ name: 'login' })
+  } 
+ 
+  next()
+   
 })
-
 export default router

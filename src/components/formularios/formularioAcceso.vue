@@ -14,7 +14,7 @@ const EMAIL: string = import.meta.env.VITE_EMAIL
 
 
 import { useUsuarioStore } from '@/stores/usuario'
-import { reactive, ref } from 'vue'
+import { reactive, ref, onMounted } from 'vue'
 import type { Ref } from 'vue'
 import type { Usuario } from '@/components/interfaces'
 import { useRouter } from 'vue-router'
@@ -43,15 +43,19 @@ const conecta = () => {
   }
   
 }  
+
+const foco = ref<HTMLInputElement | null>(null)
+onMounted(() => {
+  if (foco.value !== null) foco.value.focus()
+})
 </script>
 
 <template>
   <div class="login-container">
     <h2>{{ CONEXION }}</h2>
     <form @submit.prevent="conecta()">                                              
-      <input v-model = "usuario.login" class="login-input" type="text" :placeholder="INPUTUSUARIO" :required="true" />
+      <input ref="foco" v-model = "usuario.login" class="login-input" type="text" :placeholder="INPUTUSUARIO" :required="true" />
       <input v-model = "password" class="login-input" type="password" :placeholder="INPUTPASSWORD" :required="true" />
-      <!--Eliminaremos esto al obtener el email de la BBDD. Es para probar con modificación-->
       <input
         v-model="usuario.email"
         class="login-input"

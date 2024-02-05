@@ -20,7 +20,6 @@ const desconecta = () => {
     <form @submit.prevent="desconecta">
       <button class="create-user-button" type="submit">{{ LOGOUT }}</button>
     </form>
-    <h1>{{ useUsuario.informacionUsuario() }}</h1>
   </div>
 </template>
 

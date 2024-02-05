@@ -1,5 +1,4 @@
 <script setup lang="ts">
-//import { toRefs } from 'vue'
 //Textos obtenidos del .env
 const LOGIN: string = import.meta.env.VITE_LOGIN
 const LOGOUT: string = import.meta.env.VITE_LOGOUT
@@ -9,11 +8,12 @@ const MODIFICA_USUARIO: string  = import.meta.env.VITE_MODIFICA_USUARIO
 interface Props {
   conectado: boolean
 }
-const conectado = defineProps<Props>()
+const props = defineProps<Props>()
+
 </script>
 
 <template>
-  <div v-if="!conectado">
+  <div v-if="!props.conectado">
     <!-- Si no estamos conectados -->
     <button id="login-button">
       <RouterLink to="login"> {{ LOGIN }} </RouterLink>

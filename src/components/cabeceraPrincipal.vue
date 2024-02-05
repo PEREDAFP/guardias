@@ -16,6 +16,7 @@ const { conectado } = storeToRefs(usuario)
 
 const TextoCabecera: string = import.meta.env.VITE_CABECERA
 const enlaces: RouteLink[] = getRoutes(router)
+
 </script>
 <template>
   <header>
